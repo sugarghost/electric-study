@@ -13,6 +13,8 @@
       --theme-color: #2c6fad;
       --sidebar-width: 280px;
     }
+
+    /* ── 사이드바 ── */
     .sidebar {
       font-size: 14px;
     }
@@ -23,17 +25,96 @@
       font-weight: bold;
       font-size: 15px;
     }
+
+    /* ── 본문 제목 ── */
     .markdown-section h1 {
       font-size: 2rem;
       border-bottom: 2px solid var(--theme-color);
       padding-bottom: 0.5rem;
     }
+
+    /* ── 코드 블록 ── */
     .markdown-section code {
       background: #f4f7fb;
       border-radius: 4px;
     }
     .markdown-section pre {
       background: #f4f7fb;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ── 테이블: 모바일에서 가로 스크롤 ── */
+    .markdown-section table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+    }
+    /* 단, 좁은 테이블은 꽉 채우기 */
+    @supports (width: fit-content) {
+      .markdown-section table {
+        width: fit-content;
+        max-width: 100%;
+      }
+    }
+
+    /* ── KaTeX 수식: 가로 스크롤 ── */
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 0;
+    }
+
+    /* ── 사이드바 토글 버튼 (모바일 터치 영역 확대) ── */
+    .sidebar-toggle {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+    }
+
+    /* ════════════════════════════════
+       모바일 전용 (768px 이하)
+    ════════════════════════════════ */
+    @media screen and (max-width: 768px) {
+      :root {
+        --sidebar-width: 82vw;
+      }
+
+      /* 제목 크기 축소 */
+      .markdown-section h1 {
+        font-size: 1.5rem;
+      }
+      .markdown-section h2 {
+        font-size: 1.2rem;
+      }
+      .markdown-section h3 {
+        font-size: 1.05rem;
+      }
+
+      /* 검색창 — iOS 자동 확대 방지 (16px 미만이면 확대됨) */
+      .search input {
+        font-size: 16px;
+      }
+
+      /* 사이드바 링크 터치 영역 */
+      .sidebar-nav li > a {
+        padding: 5px 0;
+        display: block;
+        line-height: 1.6;
+      }
+
+      /* 본문 좌우 여백 */
+      .content {
+        padding: 0 12px;
+      }
+
+      /* blockquote 여백 */
+      .markdown-section blockquote {
+        margin: 1em 0;
+        padding: 0.5em 1em;
+      }
     }
   </style>
 </head>
