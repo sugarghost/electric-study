@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <title>전기기사 핵심 개념 노트</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #2c6fad;
+      --sidebar-width: 280px;
+    }
+    .sidebar {
+      font-size: 14px;
+    }
+    .sidebar-nav li > a {
+      font-weight: normal;
+    }
+    .sidebar-nav > ul > li > a {
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .markdown-section h1 {
+      font-size: 2rem;
+      border-bottom: 2px solid var(--theme-color);
+      padding-bottom: 0.5rem;
+    }
+    .markdown-section code {
+      background: #f4f7fb;
+      border-radius: 4px;
+    }
+    .markdown-section pre {
+      background: #f4f7fb;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">⏳ 로딩 중...</div>
+  <script>
+    window.$docsify = {
+      name: '⚡ 전기기사 핵심 노트',
+      nameLink: '/',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '🔍 개념 검색...',
+        noData: '검색 결과 없음',
+        depth: 4,
+        hideOtherSidebarContent: false
+      },
+      copyCode: {
+        buttonText: '복사',
+        errorText: '오류',
+        successText: '완료'
+      },
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      notFoundPage: '404.md'
+    }
+  </script>
+
+  <!-- Docsify 코어 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <!-- 검색 플러그인 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <!-- 코드 복사 버튼 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+  <!-- 테이블 정렬 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>
